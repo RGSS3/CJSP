@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <ctype.h> 
-#include <locale.h>
 
 typedef enum JType {
    JNUM, JSTRING, JARRAY, JOBJECT, JTRUE, JFALSE, JNULL
@@ -10,7 +8,7 @@ struct JValue {
    JType type;
    union {
       double jnum;
-      char * jstring;
+      char const * jstring;
       JValue ** jarray;
       JValue ** jobject;
    } v;
